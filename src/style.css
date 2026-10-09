@@ -1,0 +1,121 @@
+:root {
+  --bg-color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  user-select: none;
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: grab;
+}
+
+#canvas-container.grabbing {
+  cursor: grabbing !important;
+}
+
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+/* --- CLEAN SHARP MONOCHROME GUI (TOP-LEFT) - FULL VW SCALING --- */
+.lil-gui.root {
+  --background-color: #0f0f11;
+  --text-color: #e4e4e7;
+  --title-background-color: #18181b;
+  --title-text-color: #ffffff;
+  --widget-color: #27272a;
+  --hover-color: #3f3f46;
+  --focus-color: #52525b;
+  --number-color: #f4f4f5;
+  --string-color: #e4e4e7;
+  --widget-border-radius: 0vw;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-size: 0.72vw;
+  --input-font-size: 0.72vw;
+  --padding: 0.28vw;
+  --spacing: 0.28vw;
+  --widget-height: 1.55vw;
+  --name-width: 48%;
+  --slider-knob-width: 0.14vw;
+  --slider-input-width: 26%;
+  --slider-input-min-width: 3.1vw;
+  --folder-indent: 0.42vw;
+  --widget-padding: 0 0 0 0.21vw;
+  --scrollbar-width: 0.35vw;
+  
+  position: fixed !important;
+  top: 1.1vw !important;
+  left: 1.1vw !important;
+  right: auto !important;
+  width: 18.5vw !important;
+  border-radius: 0 !important;
+  border: 0.07vw solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 0.9vw 2.5vw rgba(0, 0, 0, 0.75) !important;
+  z-index: 1000 !important;
+}
+
+.lil-gui,
+.lil-gui * {
+  border-radius: 0 !important;
+}
+
+.lil-gui .title {
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+.lil-gui .folder > .title {
+  border-left: 0.14vw solid #71717a !important;
+  background: #141416 !important;
+}
+
+.lil-gui .controller.number .slider .fill {
+  background: #ffffff !important;
+  border-right-color: #ffffff !important;
+}
+
+.lil-gui .controller.function .widget button {
+  background: #27272a !important;
+  border: 0.07vw solid rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+
+.lil-gui .controller.function .widget button:hover {
+  background: #3f3f46 !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
